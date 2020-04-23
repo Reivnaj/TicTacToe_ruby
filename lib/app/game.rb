@@ -44,7 +44,7 @@ class Game
   
 
   def update_board(user_choice)
-    if user_choice.match(/[0-9]/) && user_choice.to_i > 0 && user_choice.to_i < @available_board_cases_hash.size
+    if user_choice.match(/[0-9]/) && user_choice.to_i >= 0 && user_choice.to_i < @available_board_cases_hash.size
         # Attention faire if user_choice ne fait pas partie des choix alors ...
       @player_1.turn ? case_value = 'X' : case_value = 'O'
       @board.cases_hash[@available_board_cases_hash.keys[user_choice.to_i]].change_value(case_value)
